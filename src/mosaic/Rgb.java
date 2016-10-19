@@ -10,12 +10,12 @@ public class Rgb {
 		}
 	}
 
-	public boolean same(Rgb r, int dif) {
+	public int dif(Rgb r) {
+		int ans = 0;
 		for (int i = 0; i < 4; i++) {
-			if (Math.abs(a[i] - r.a[i]) > dif)
-				return false;
+			ans += (a[i] - r.a[i]) * (a[i] - r.a[i]);
 		}
-		return true;
+		return ans;
 	}
 
 	public int get() {
